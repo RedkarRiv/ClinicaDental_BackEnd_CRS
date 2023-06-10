@@ -9,7 +9,6 @@ const PORT = 3000;
 app.use(express.json());
 app.use(router);
 app.use(cors());
-
 app.use(router);
 
 

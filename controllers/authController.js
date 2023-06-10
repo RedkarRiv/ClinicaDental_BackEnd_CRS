@@ -24,3 +24,6 @@ authController.register = async (req, res) => {
     return res.send("No ha sido posible crear la cuenta " + error.message);
   }
 };
+
+module.exports = authController
+
