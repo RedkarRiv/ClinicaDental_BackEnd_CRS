@@ -1,4 +1,4 @@
-const jwv = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 const auth = (req, res, next) => {
 
@@ -15,7 +15,7 @@ if (!bearerToken) {
     )
 }
 
-const token = bearerToken.split("")[1];
+const token = bearerToken.split(" ")[1];
 const decoded = jwt.verify(token, "kilombo");
 
 req.userId = decoded.userId;
