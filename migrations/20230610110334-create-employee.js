@@ -10,13 +10,29 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model: "Users",
+          key: "id"
+        }
+      },
+      role_id: {
+        type: Sequelize.INTEGER,
+        references:{
+          model: "Roles",
+          key: "id"
+        }
       },
       speciality_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model: "Specialities",
+          key: "id"
+        }
       },
       profesional_registration_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true
       },
       active_status: {
         type: Sequelize.BOOLEAN

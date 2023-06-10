@@ -16,7 +16,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       dni: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       address: {
         type: Sequelize.STRING
@@ -25,10 +26,12 @@ module.exports = {
         type: Sequelize.DATE
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       password: {
         type: Sequelize.STRING

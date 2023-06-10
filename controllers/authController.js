@@ -25,5 +25,56 @@ authController.register = async (req, res) => {
   }
 };
 
-module.exports = authController
+authController.login = async (req, res) => {
+  try {
+    const email = req.body.email;
+    const password = req.body.password;
+    const user = await User.findOne({
+      where: {
+        email: email,
+      },
+    });
 
+    if (!user) {
+      return res.json({
+        success: true,
+        message: "Usuario incorrecto",
+      });
+    }
+
+    const isMatch = bcrypt.compareSync(password, user.password);
+
+    if (!isMatch) {
+      return res.json({
+        success: true,
+        message: "Contraseña incorrecta",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        userId: user.id,
+        roleId: user.role_id,
+        email: user.email,
+      },
+      "kilombo",
+      {
+        expiresIn: "2h",
+      }
+    );
+
+    return res.json({
+      success: true,
+      message: "Usuario logeado",
+      token: token,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "El usuario no ha podido logearse",
+      error: error.menssage,
+    });
+  }
+};
+
+module.exports = authController;
