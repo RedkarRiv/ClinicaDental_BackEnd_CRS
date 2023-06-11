@@ -5,17 +5,17 @@ const updateUserController = {};
 updateUserController.updateUser = async (req, res) => {
 
 try {
-    const userId = req.body.userId;
+    const userId = req.userId;
 
-//     const user = await User.findByPk(userId);
-// if (!user) {
-//     return res.json(
-//         {
-//             success: true,
-//             message: "El usuario no existe"
-//         }
-//     )
-// }
+    const user = await User.findByPk(userId);
+if (!user) {
+    return res.json(
+        {
+            success: true,
+            message: "El usuario no existe"
+        }
+    )
+}
 
         const name = req.body.name
         const surname = req.body.surname
@@ -26,29 +26,35 @@ try {
         const email = req.body.email
         const password = req.body.password
 
-        // if (password.length < 4) {
-        //     return res.json(
-        //         { 
-        //             success: false,
-        //             message:"La contraseña debe tener al menos 4 carácteres. Inténtelo de nuevo"
-        //         }
-        //         )
-        // }
+        if (!password|| !email || !name) {
+            return res.json(
+                {
+                    success: false,
+                    message: "No puedes dejar los campos de name, password y email en blanco"
+                }
+            )
+        }
+        if (password.length < 4) {
+            return res.json(
+                { 
+                    success: false,
+                    message:"La contraseña debe tener al menos 4 carácteres. Inténtelo de nuevo"
+                }
+                )
+        }
 
-        // const newPassword = bcrypt.hashSync(password, 10);
+        const newPassword = bcrypt.hashSync(password, 10);
 
         const result = await User.update (
             {
-            name, surname, dni, address, birth_date, phone, email, password
-
-            // name : name,
-            // surname : surname,
-            // dni : dni,
-            // address : address,
-            // birth_date : birth_date,
-            // phone : phone,
-            // email : email,
-            // password: password
+            name : name,
+            surname : surname,
+            dni : dni,
+            address : address,
+            birth_date : birth_date,
+            phone : phone,
+            email : email,
+            password: newPassword
             },
             {
                 where: {
@@ -60,7 +66,7 @@ try {
                 {
                     success: true,
                     message: "Datos del usuario actualizados",
-                    data: result
+                    data: result,
                 }
             )
 
