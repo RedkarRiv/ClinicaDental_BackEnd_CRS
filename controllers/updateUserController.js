@@ -5,17 +5,17 @@ const updateUserController = {};
 updateUserController.updateUser = async (req, res) => {
 
 try {
-    const userId = req.userId;
-const user = await User.findByPk(userId);
+    const userId = req.body.userId;
 
-if (!user) {
-    return res.json(
-        {
-            success: true,
-            message: "El usuario no existe"
-        }
-    )
-}
+//     const user = await User.findByPk(userId);
+// if (!user) {
+//     return res.json(
+//         {
+//             success: true,
+//             message: "El usuario no existe"
+//         }
+//     )
+// }
 
         const name = req.body.name
         const surname = req.body.surname
@@ -39,14 +39,16 @@ if (!user) {
 
         const result = await User.update (
             {
-            name : name,
-            surname : surname,
-            dni : dni,
-            address : address,
-            birth_date : birth_date,
-            phone : phone,
-            email : email,
-            password: password
+            name, surname, dni, address, birth_date, phone, email, password
+
+            // name : name,
+            // surname : surname,
+            // dni : dni,
+            // address : address,
+            // birth_date : birth_date,
+            // phone : phone,
+            // email : email,
+            // password: password
             },
             {
                 where: {

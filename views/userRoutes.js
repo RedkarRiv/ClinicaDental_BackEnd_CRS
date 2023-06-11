@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const auth = require("../middlewares/tokenVerify");
+const isAdmin = require("../middlewares/isAdmin");
 const deleteUserController = require("../controllers/deleteUserController");
 const updateUserController = require("../controllers/updateUserController");
-const isAdmin = require("../middlewares/isAdmin");
 const getOneUserController = require("../controllers/getOneUserController");
 
 router.delete("/:id", auth, isAdmin, deleteUserController.deleteUser);

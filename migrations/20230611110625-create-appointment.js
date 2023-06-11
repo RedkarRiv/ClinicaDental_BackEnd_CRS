@@ -26,6 +26,16 @@ module.exports = {
       appointment_date: {
         type: Sequelize.DATE
       },
+      treatment: {
+        type: Sequelize.STRING,
+        references:{
+          model: "Treatments",
+          key: "name"
+        }
+      },
+      payment: {
+        type: Sequelize.FLOAT
+      },
       comments: {
         type: Sequelize.STRING
       },
