@@ -9,29 +9,29 @@ try {
             where: {
                 id:req.params.id
             },
-            attributes: {
-                exclude: ["UserId", "EmployeeId", "payment"]
-            },
-            include: [
-                {
-                attributes: {
-                    exclude: ["id", "password", "addres", "birth_date", "role_id", "createdAt", "updatedAt"]
-                },
-                model: User,
-                },
-                {
-                attributes: {
-                    exclude: ["id", "createdAt", "updatedAt"]
-                },
-                model: Treatment,
-                },
-                {
-                attributes: {
-                    exclude: ["role_id", "user_id","profesional_registration_id", "createdAt", "updatedAt"]
-                },
-                model: Employee,
-                }
-            ]
+            // attributes: {
+            //     exclude: ["UserId", "EmployeeId", "payment"]
+            // },
+            // include: [
+            //     {
+            //     attributes: {
+            //         exclude: ["id", "password", "addres", "birth_date", "role_id", "createdAt", "updatedAt"]
+            //     },
+            //     model: User,
+            //     },
+            //     {
+            //     attributes: {
+            //         exclude: ["id", "createdAt", "updatedAt"]
+            //     },
+            //     model: Treatment,
+            //     },
+            //     {
+            //     attributes: {
+            //         exclude: ["role_id", "user_id","profesional_registration_id", "createdAt", "updatedAt"]
+            //     },
+            //     model: Employee,
+            //     }
+            // ]
         }
     )
     return res.json (
