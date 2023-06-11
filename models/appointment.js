@@ -11,35 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
 
-models.Appointment.belongsTo(models.User),
-models.Appointment.belongsTo(models.Treatment),
-models.Appointment.belongsTo(models.Employee)
-
 }
   }
   Appointment.init({
-    user_id:{ 
-      type: DataTypes.INTEGER,
-      references: {
-        model:"Users",
-        key: "id",
-      }
-    },
-    employee_id:{   
-      type: DataTypes.INTEGER,
-      references: {
-        model:"Employees",
-        key: "id",
-      }
-    },
+    user_id: DataTypes.INTEGER,
+    employee_id: DataTypes.INTEGER,
     appointment_date: DataTypes.DATE,
-    treatment:{   
-      type: DataTypes.INTEGER,
-      references: {
-        model:"Treatments",
-        key: "id",
-      }
-    },
+    treatment: DataTypes.STRING,
     payment: DataTypes.FLOAT,
     comments: DataTypes.STRING
   }, {
