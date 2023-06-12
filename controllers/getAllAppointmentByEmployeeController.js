@@ -1,16 +1,16 @@
 const { Appointment } = require("../models");
-const getAllAppointmentsByUserController = {};
+const getAllAppointmentsByEmployeeController = {};
 
-getAllAppointmentsByUserController.getAllAppointments = async (req, res) => {
+getAllAppointmentsByEmployeeController.getAllAppointments = async (req, res) => {
 
 try {
-    const userId = req.userId
+    const employeeId = req.body.employee_id
 
     const allAppointments = await Appointment.findAll(
         {
             where: 
             {
-                user_id: userId,
+                employee_id: employeeId,
             }
         }
     );
@@ -34,4 +34,4 @@ try {
     )
 }
 };
-module.exports = getAllAppointmentsByUserController;
+module.exports = getAllAppointmentsByEmployeeController;

@@ -17,7 +17,7 @@ authController.register = async (req, res) => {
       surname: req.body.surname,
       email: req.body.email,
       password: newPassword,
-      role_id: 1,
+      role_id: 2,
     });
     return res.send(newUser);
   } catch (error) {
