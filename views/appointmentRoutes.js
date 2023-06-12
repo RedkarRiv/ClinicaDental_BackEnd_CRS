@@ -10,7 +10,7 @@ const getAllAppointmentsByEmployeeController = require("../controllers/appointme
 
 router.post("/new", auth, createAppointmentController.createAppointment)
 router.post("/delete", auth, deleteAppointmentController.deleteAppointment)
-router.get("/cita/:id", auth, getOneAppointmentController.getOneAppointment)
+router.get("/visit/:id", auth, getOneAppointmentController.getOneAppointment)
 router.put("/update/:id", auth, updateAppointmentController.updateAppointment)
 router.get("/all", auth, getAllAppointmentsByUserController.getAllAppointments)
 router.post("/list", auth, isEmployee, getAllAppointmentsByEmployeeController.getAllAppointments)
