@@ -42,7 +42,7 @@ Por último, **POSTMAN** como simulador de Font-end para la comprobación y vali
 ### 📍 Diagrama ER 📍
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/RedkarRiv/ClinicaDental_BackEnd_CRS/develop/img/diagramaER.png"  width="400" height="400"></p>
+<img src="https://raw.githubusercontent.com/RedkarRiv/ClinicaDental_BackEnd_CRS/develop/img/diagramaER.png"  width="600" height="600"></p>
 
 ### 🏠 Instalacion 🏠
 1. Clonamos el repositorio: https://github.com/RedkarRiv/Project_BACKEND_Dentista.git
