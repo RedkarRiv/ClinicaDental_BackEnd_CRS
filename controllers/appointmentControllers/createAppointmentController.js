@@ -1,4 +1,4 @@
-const { Appointment } = require("../models");
+const { Appointment } = require("../../models");
 const createAppointmentController = {};
 
 
@@ -6,9 +6,9 @@ createAppointmentController.createAppointment = async (req, res) => {
 
 try {
     
-const {user_id, employee_id, appointment_date, treatment, comments}= req.body;
-
-if (!user_id || !employee_id || !appointment_date) {
+const {employee_id, appointment_date, treatment, comments}= req.body;
+const userId= req.userId
+if (!userId || !employee_id || !appointment_date) {
     return res.json(
         {
             success: false,
@@ -19,7 +19,7 @@ if (!user_id || !employee_id || !appointment_date) {
 
 const newAppointment = await Appointment.create(
     {
-        user_id : user_id,
+        user_id : userId,
         employee_id: employee_id,
         appointment_date: appointment_date,
         treatment: treatment,

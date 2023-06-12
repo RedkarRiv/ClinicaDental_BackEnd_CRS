@@ -1,4 +1,4 @@
-const { Appointment, User, Employee, Treatment } = require("../models");
+const { Appointment, User, Employee, Treatment } = require("../../models");
 const getAllAppointmentsByUserController = {};
 
 getAllAppointmentsByUserController.getAllAppointments = async (req, res) => {

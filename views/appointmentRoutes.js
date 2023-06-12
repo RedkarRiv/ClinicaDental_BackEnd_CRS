@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const auth = require("../middlewares/tokenVerify");
 const isEmployee = require("../middlewares/isEmployee");
-const createAppointmentController = require("../controllers/createAppointmentController");
-const deleteAppointmentController = require("../controllers/deleteAppointmentController");
-const getOneAppointmentController = require("../controllers/getOneAppointmentController");
-const updateAppointmentController = require("../controllers/updateAppointmentController")
-const getAllAppointmentsByUserController = require("../controllers/getAllAppointmentByUserController");
-const getAllAppointmentsByEmployeeController = require("../controllers/getAllAppointmentByEmployeeController");
+const createAppointmentController = require("../controllers/appointmentControllers/createAppointmentController");
+const deleteAppointmentController = require("../controllers/appointmentControllers/deleteAppointmentController");
+const getOneAppointmentController = require("../controllers/appointmentControllers/getOneAppointmentController");
+const updateAppointmentController = require("../controllers/appointmentControllers/updateAppointmentController")
+const getAllAppointmentsByUserController = require("../controllers/appointmentControllers/getAllAppointmentByUserController");
+const getAllAppointmentsByEmployeeController = require("../controllers/appointmentControllers/getAllAppointmentByEmployeeController");
 
 router.post("/new", auth, createAppointmentController.createAppointment)
 router.delete("/:id", auth, deleteAppointmentController.deleteAppointment)

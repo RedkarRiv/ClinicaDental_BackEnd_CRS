@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User } = require("../../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -17,7 +17,7 @@ authController.register = async (req, res) => {
       surname: req.body.surname,
       email: req.body.email,
       password: newPassword,
-      role_id: 2,
+      role_id: 1,
     });
     return res.send(newUser);
   } catch (error) {

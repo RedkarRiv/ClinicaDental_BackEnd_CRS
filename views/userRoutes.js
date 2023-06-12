@@ -1,16 +1,19 @@
 const router = require("express").Router();
 const auth = require("../middlewares/tokenVerify");
 const isAdmin = require("../middlewares/isAdmin");
-const deleteUserController = require("../controllers/deleteUserController");
-const updateUserController = require("../controllers/updateUserController");
-const getOneUserController = require("../controllers/getOneUserController");
-const getAllUserController = require("../controllers/getAllUserController");
+const isEmployee = require("../middlewares/isEmployee");
+const deleteUserController = require("../controllers/usersControllers/deleteUserController");
+const updateUserController = require("../controllers/usersControllers/updateUserController");
+const getOneUserController = require("../controllers/usersControllers/getOneUserController");
+const getAllUserController = require("../controllers/usersControllers/getAllUserController");
+const getAllUsersByEmployeeController = require("../controllers/usersControllers/getAllUsersByEmployeeController")
 
 
 router.delete("/:id", auth, isAdmin, deleteUserController.deleteUser);
 router.put("/update", auth, updateUserController.updateUser);
 router.get("/", auth, getOneUserController.getOneUser);
 router.get("/all", auth, isAdmin, getAllUserController.getAllUsers);
+router.get("/patients/:id", auth, isEmployee, getAllUsersByEmployeeController.getAllPatients);
 
 
 module.exports = router;
