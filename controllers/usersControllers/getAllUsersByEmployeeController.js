@@ -3,7 +3,7 @@ const getAllUsersByEmployeeController = {}
 
 getAllUsersByEmployeeController.getAllPatients = async (req, res) => {
 try {
-    const employeeId = req.params.id;
+    const employeeId = req.body.employee_id;
     console.log(User)
 
     allPatients = await User.findAll({
@@ -12,7 +12,7 @@ try {
           model: Appointment,
           as: "patient",
           where: { employee_id: employeeId },
-          attributes: ["appointment_date", "treatment"],
+          attributes: ["appointment_date", "treatment", "comments"],
           include: [
             {
               model: Treatment,

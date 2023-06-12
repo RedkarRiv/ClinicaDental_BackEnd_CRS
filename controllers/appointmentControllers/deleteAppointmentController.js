@@ -4,7 +4,7 @@ const deleteAppointmentController = {};
 deleteAppointmentController.deleteAppointment = async (req, res) => {
 
     try {
-    const appointmentID = req.params.id
+    const appointmentID = req.body.appointment_id
 
     const result = await Appointment.destroy({
             where: {
