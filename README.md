@@ -59,18 +59,29 @@ Por último, **POSTMAN** como simulador de Font-end para la comprobación y vali
 Se han incluido los siguientes Endpoints:
 
 **Registro de usuarios**: localhost:3000/auth/register
+
 **Login de usuarios**: localhost:3000/auth/login
+
 **Eliminar usuarios**: localhost:3000/users/14 (solo ADMIN)
+
 **Actualizar usuarios**: localhost:3000/users/update
+
 **Ver mi perfil de usuario**: localhost:3000/users/
+
 **Ver todos los usuarios**: localhost:3000/users/all (solo ADMIN)
 
 **Crear cita médica**: localhost:3000/appointment/new
+
 **Eliminar cita**: localhost:3000/appointment/delete
+
 **Actualizar cita**: localhost:3000/appointment/update
+
 **Ver cita**: localhost:3000/appointment/visit
+
 **Ver todas las citas del usuario**: localhost:3000/appointment/all
+
 **Ver todas las citas del doctor**: localhost:3000/appointment/list
+
 **Ver todos los pacientes por doctor**: localhost:3000/users/patients/
 
 
