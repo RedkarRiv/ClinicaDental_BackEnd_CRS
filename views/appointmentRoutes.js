@@ -5,11 +5,13 @@ const createAppointmentController = require("../controllers/createAppointmentCon
 const deleteAppointmentController = require("../controllers/deleteAppointmentController");
 const getOneAppointmentController = require("../controllers/getOneAppointmentController");
 const updateAppointmentController = require("../controllers/updateAppointmentController")
+const getAllAppointmentsByUserController = require("../controllers/getAllAppointmentByUserController")
 
 router.post("/new", auth, createAppointmentController.createAppointment)
 router.delete("/:id", auth, deleteAppointmentController.deleteAppointment)
-router.get("/:id", auth, getOneAppointmentController.getOneAppointment)
+router.get("/cita/:id", auth, getOneAppointmentController.getOneAppointment)
 router.put("/update/:id", auth, updateAppointmentController.updateAppointment)
+router.get("/all", auth, getAllAppointmentsByUserController.getAllAppointments)
 
 
 module.exports = router;

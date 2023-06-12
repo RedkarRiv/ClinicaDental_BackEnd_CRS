@@ -27,14 +27,14 @@ module.exports = {
         type: Sequelize.DATE
       },
       treatment: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         references:{
           model: "Treatments",
-          key: "name"
+          key: "id"
         }
       },
-      payment: {
-        type: Sequelize.FLOAT
+      price: {
+        type: Sequelize.FLOAT,
       },
       comments: {
         type: Sequelize.STRING
