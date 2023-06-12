@@ -1,4 +1,4 @@
-const { Appointment } = require("../models");
+const { Appointment, User, Employee, Treatment } = require("../models");
 const getAllAppointmentsByUserController = {};
 
 getAllAppointmentsByUserController.getAllAppointments = async (req, res) => {
@@ -11,7 +11,23 @@ try {
             where: 
             {
                 user_id: userId,
-            }
+            },            
+            attributes: {
+                exclude: ["user_id", "employee_id", "createdAt", "updatedAt"]
+            },
+            include: [
+                    {
+                attributes: 
+                {exclude: ["id","createdAt", "updatedAt"]},
+                model: Treatment,
+                },
+                {
+                attributes: 
+                {exclude: ["role_id", "user_id", "profesional_registration_id", "active_status", "createdAt", "updatedAt"]},
+                model: Employee,
+                as: "doctor"
+                }
+            ]
         }
     );
 

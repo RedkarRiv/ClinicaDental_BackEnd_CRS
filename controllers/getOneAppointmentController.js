@@ -9,29 +9,28 @@ try {
             where: {
                 id:req.params.id
             },
-            // attributes: {
-            //     exclude: ["UserId", "EmployeeId", "payment"]
-            // },
-            // include: [
-            //     {
-            //     attributes: {
-            //         exclude: ["id", "password", "addres", "birth_date", "role_id", "createdAt", "updatedAt"]
-            //     },
-            //     model: User,
-            //     },
-            //     {
-            //     attributes: {
-            //         exclude: ["id", "createdAt", "updatedAt"]
-            //     },
-            //     model: Treatment,
-            //     },
-            //     {
-            //     attributes: {
-            //         exclude: ["role_id", "user_id","profesional_registration_id", "createdAt", "updatedAt"]
-            //     },
-            //     model: Employee,
-            //     }
-            // ]
+            attributes: {
+                exclude: ["user_id", "employee_id", "createdAt", "updatedAt"]
+            },
+            include: [
+                {
+                attributes: 
+                {exclude: ["id", "password", "address", "dni", "birth_date", "role_id", "createdAt", "updatedAt"]},
+                model: User,
+                as: "patient"
+                },
+                {
+                attributes: 
+                {exclude: ["id","createdAt", "updatedAt"]},
+                model: Treatment,
+                },
+                {
+                attributes: 
+                {exclude: ["role_id", "user_id", "profesional_registration_id", "active_status", "createdAt", "updatedAt"]},
+                model: Employee,
+                as: "doctor"
+                }
+            ]
         }
     )
     return res.json (

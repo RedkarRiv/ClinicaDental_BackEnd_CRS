@@ -10,18 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Appointment.belongsTo(models.Employee,
-      //   {
-      //     foreignKey:"employee_id"
-      //   })
-      // Appointment.belongsTo(models.User,
-      //   {
-      //     foreignKey:"user_id"
-      //   })
-      // Appointment.belongsTo(models.Treatment,
-      //   {
-      //     foreignKey:"treatment"
-      //   })  
+      Appointment.belongsTo(models.Employee,
+        {
+          foreignKey:"employee_id",
+          as: "doctor"
+        })
+      Appointment.belongsTo(models.User,
+        {
+          foreignKey:"user_id",
+          as: "patient"
+        })
+      Appointment.belongsTo(models.Treatment,
+        {
+          foreignKey:"treatment"
+        })  
     }
   }
   Appointment.init({
