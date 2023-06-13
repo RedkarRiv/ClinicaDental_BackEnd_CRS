@@ -1,30 +1,38 @@
-const { Appointment, User, Treatment} = require("../../models");
+const { Appointment, User, Treatment, Employee} = require("../../models");
 const getAllUsersByEmployeeController = {}
 
 getAllUsersByEmployeeController.getAllPatients = async (req, res) => {
 try {
-    const employeeId = req.body.employee_id;
-    console.log(User)
+    const userId = req.userId;
 
-    allPatients = await User.findAll({
+    const employeeUserId = await User.findOne({
+      where: { id: userId },
       include: [
         {
-          model: Appointment,
-          as: "patient",
-          where: { employee_id: employeeId },
-          attributes: ["appointment_date", "treatment", "comments"],
-          include: [
-            {
-              model: Treatment,
-              attributes: ["name", "comments", "price"]
-            },
-          ],
+          model: Employee,
         },
       ],
-      attributes: ["name", "surname", "phone"],
     });
 
-
+    allPatients = await User.findAll({
+          include: [
+            {
+              model: Appointment,
+              as: "patient",
+              where: {employee_id: employeeUserId},
+              attributes: ["appointment_date", "treatment", "comments"],
+              include: [
+                {
+                  model: Treatment,
+                  attributes: ["name", "comments", "price"]
+                },
+                
+              ],
+            },
+      ],
+      attributes: ["name", "surname", "phone"],
+    });      
+    
     //   include: [
     //     {
     //       model: Appointment,

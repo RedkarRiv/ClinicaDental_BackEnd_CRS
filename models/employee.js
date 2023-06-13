@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       Employee.hasMany(models.Appointment, {
         foreignKey: "employee_id",
         as: "doctor"
-      });       }
+      });       
+      Employee.belongsTo(models.User, { foreignKey: 'id'});
+
+    }
   }
   Employee.init({
     role_id: DataTypes.INTEGER,

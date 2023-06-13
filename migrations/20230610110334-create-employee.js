@@ -11,13 +11,13 @@ module.exports = {
       },
       role_id: {
         type: Sequelize.INTEGER,
-        references:{
-          model: "Roles",
-          key: "id"
-        }
       },
       user_id: {
         type: Sequelize.INTEGER,
+        references:{
+          model: "Users",
+          key: "id"
+        }
       },
       speciality_id: {
         type: Sequelize.INTEGER,

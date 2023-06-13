@@ -33,9 +33,6 @@ module.exports = {
           key: "id"
         }
       },
-      price: {
-        type: Sequelize.FLOAT,
-      },
       comments: {
         type: Sequelize.STRING
       },
