@@ -31,7 +31,6 @@
       employee_id: DataTypes.INTEGER,
       appointment_date: DataTypes.DATE,
       treatment: DataTypes.INTEGER,
-      price: DataTypes.FLOAT,
       comments: DataTypes.STRING
     }, {
       sequelize,

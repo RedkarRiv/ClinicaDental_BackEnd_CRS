@@ -13,7 +13,7 @@ router.delete("/:id", auth, isAdmin, deleteUserController.deleteUser);
 router.put("/update", auth, updateUserController.updateUser);
 router.get("/", auth, getOneUserController.getOneUser);
 router.get("/all", auth, isAdmin, getAllUserController.getAllUsers);
-router.get("/patients/", auth, isEmployee, getAllUsersByEmployeeController.getAllPatients); // Sacar employee_ID by token por user_id
+router.get("/patients/", auth, isEmployee, getAllUsersByEmployeeController.getAllPatients);
 
 
 module.exports = router;
