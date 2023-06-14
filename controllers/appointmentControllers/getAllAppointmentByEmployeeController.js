@@ -5,6 +5,26 @@ getAllAppointmentsByEmployeeController.getAllAppointments = async (req, res) => 
 
 try {
     const employeeId = req.body.employee_id
+    const userId = req.userId
+
+    const checkUserIdEmployee = await Employee.findOne(
+        {
+            where: 
+            {
+                user_id: userId,
+            }
+        }
+    )
+
+if (checkUserIdEmployee.id !== employeeId) {
+    return res.json(
+        {
+            success: true,
+            message: "No tienes permiso para acceder"
+        }
+    )
+}
+
 
     const allAppointments = await Appointment.findAll(
         {

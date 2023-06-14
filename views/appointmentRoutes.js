@@ -9,7 +9,7 @@ const getAllAppointmentsByUserController = require("../controllers/appointmentCo
 const getAllAppointmentsByEmployeeController = require("../controllers/appointmentControllers/getAllAppointmentByEmployeeController");
 
 router.post("/new", auth, createAppointmentController.createAppointment)
-router.post("/delete", auth, deleteAppointmentController.deleteAppointment) // comprobacion ID por token.
+router.post("/delete", auth, deleteAppointmentController.deleteAppointment) // pte de manejo de user_id:null
 router.get("/visit/:id", auth, getOneAppointmentController.getOneAppointment)
 router.put("/update/:id", auth, updateAppointmentController.updateAppointment)
 router.get("/all", auth, getAllAppointmentsByUserController.getAllAppointments)
