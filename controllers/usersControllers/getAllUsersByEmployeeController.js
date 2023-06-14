@@ -1,38 +1,38 @@
-const { Appointment, User, Treatment, Employee} = require("../../models");
-const getAllUsersByEmployeeController = {}
+const { Appointment, User, Treatment, Employee } = require("../../models");
+const getAllUsersByEmployeeController = {};
 
 getAllUsersByEmployeeController.getAllPatients = async (req, res) => {
-try {
+  try {
     const userId = req.userId;
+    console.log(`El userId es ${userId}`)
 
-    const employeeUserId = await User.findOne({
-      where: { id: userId },
+    const employee = await Employee.findOne({
+      where: { user_id: userId },
+      attributes: ["id"]
+    });
+    
+    const employeeUserId = employee ? employee.id : null;
+
+    console.log(`El employeeUserId es ${employeeUserId}`)
+
+    const allPatients = await User.findAll({
       include: [
         {
-          model: Employee,
-        },
-      ],
-    });
-
-    allPatients = await User.findAll({
+          model: Appointment,
+          as: "patient",
+          where: { employee_id: employeeUserId },
+          attributes: ["appointment_date", "treatment", "comments"],
           include: [
             {
-              model: Appointment,
-              as: "patient",
-              where: {employee_id: employeeUserId},
-              attributes: ["appointment_date", "treatment", "comments"],
-              include: [
-                {
-                  model: Treatment,
-                  attributes: ["name", "comments", "price"]
-                },
-                
-              ],
+              model: Treatment,
+              attributes: ["name", "comments", "price"],
             },
+          ],
+        },
       ],
       attributes: ["name", "surname", "phone"],
-    });      
-    
+    });
+
     //   include: [
     //     {
     //       model: Appointment,
@@ -54,7 +54,7 @@ try {
       data: allPatients,
     });
 
-        // allPatients = await User.findAll({
+    // allPatients = await User.findAll({
     //     where: {
     //         id: {
     //             [Op.in]: sequelize.literal ( `SELECT DISTINCT "patient" AS "user_id" FROM "Appointment" WHERE "employeeId" = ${employeeId}`)
@@ -62,8 +62,6 @@ try {
     //     },
     //     attributes: ["name", "surname", "email"],
     // })
-
-    
   } catch (error) {
     return res.status(500).json({
       success: false,
