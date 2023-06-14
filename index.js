@@ -5,19 +5,9 @@ const router = require('./router');
 const app = express();
 const PORT = 3000;
 
-
 app.use(express.json());
 app.use(router);
 app.use(cors());
-app.use(router);
-
-
-
-
-
-
-
-
 
 app.get('/health', (req, res) => {
     return res.send('healthy');

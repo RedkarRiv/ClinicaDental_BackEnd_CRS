@@ -13,7 +13,7 @@ router.post("/delete", auth, deleteAppointmentController.deleteAppointment) // p
 router.get("/visit/:id", auth, getOneAppointmentController.getOneAppointment)
 router.put("/update/:id", auth, updateAppointmentController.updateAppointment)
 router.get("/all", auth, getAllAppointmentsByUserController.getAllAppointments)
-router.post("/list", auth, isEmployee, getAllAppointmentsByEmployeeController.getAllAppointments) // validacion del empleado para solov ers us citas
+router.post("/list", auth, isEmployee, getAllAppointmentsByEmployeeController.getAllAppointments)
 
 
 module.exports = router;

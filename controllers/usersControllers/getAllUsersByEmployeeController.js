@@ -4,16 +4,16 @@ const getAllUsersByEmployeeController = {};
 getAllUsersByEmployeeController.getAllPatients = async (req, res) => {
   try {
     const userId = req.userId;
-    console.log(`El userId es ${userId}`)
+    console.log(`El userId es ${userId}`);
 
     const employee = await Employee.findOne({
       where: { user_id: userId },
-      attributes: ["id"]
+      attributes: ["id"],
     });
-    
+
     const employeeUserId = employee ? employee.id : null;
 
-    console.log(`El employeeUserId es ${employeeUserId}`)
+    console.log(`El employeeUserId es ${employeeUserId}`);
 
     const allPatients = await User.findAll({
       include: [
@@ -33,35 +33,12 @@ getAllUsersByEmployeeController.getAllPatients = async (req, res) => {
       attributes: ["name", "surname", "phone"],
     });
 
-    //   include: [
-    //     {
-    //       model: Appointment,
-    //       as: "patient",
-    //       include: [
-    //         {
-    //           model: Employee,
-    //           as: "doctor",
-    //           where: { id: employeeId },
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   attributes: ["name", "surname", "email"],
-    // });
     return res.json({
       success: true,
       message: "Los datos han sido recuperados correctamente",
       data: allPatients,
     });
 
-    // allPatients = await User.findAll({
-    //     where: {
-    //         id: {
-    //             [Op.in]: sequelize.literal ( `SELECT DISTINCT "patient" AS "user_id" FROM "Appointment" WHERE "employeeId" = ${employeeId}`)
-    //         }
-    //     },
-    //     attributes: ["name", "surname", "email"],
-    // })
   } catch (error) {
     return res.status(500).json({
       success: false,

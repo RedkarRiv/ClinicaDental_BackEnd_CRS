@@ -8,12 +8,10 @@ const getOneUserController = require("../controllers/usersControllers/getOneUser
 const getAllUserController = require("../controllers/usersControllers/getAllUserController");
 const getAllUsersByEmployeeController = require("../controllers/usersControllers/getAllUsersByEmployeeController")
 
-
 router.delete("/:id", auth, isAdmin, deleteUserController.deleteUser);
 router.put("/update", auth, updateUserController.updateUser);
 router.get("/", auth, getOneUserController.getOneUser);
 router.get("/all", auth, isAdmin, getAllUserController.getAllUsers);
 router.get("/patients/", auth, isEmployee, getAllUsersByEmployeeController.getAllPatients);
-
 
 module.exports = router;
