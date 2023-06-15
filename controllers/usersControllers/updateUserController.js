@@ -1,6 +1,8 @@
 const { User } = require("../../models");
 const bcrypt = require("bcrypt");
 const updateUserController = {};
+const checkEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{4,}$/;
 
 updateUserController.updateUser = async (req, res) => {
   try {
@@ -17,11 +19,13 @@ updateUserController.updateUser = async (req, res) => {
     const name = req.body.name;
     const surname = req.body.surname;
     const dni = req.body.dni;
-    const address = req.body.address;
+    const cp = req.body.cp;
     const birth_date = req.body.birth_date;
     const phone = req.body.phone;
     const email = req.body.email;
     const password = req.body.password;
+    
+
 
     if (!password || !email || !name) {
       return res.json({
@@ -30,14 +34,22 @@ updateUserController.updateUser = async (req, res) => {
           "No puedes dejar los campos de name, password y email en blanco",
       });
     }
-    if (password.length < 4) {
-      return res.json({
+  
+    if (!checkEmail.test(req.body.email)) {
+      return res.status(400).json({
         success: false,
-        message:
-          "La contraseña debe tener al menos 4 carácteres. Inténtelo de nuevo",
+        message: "El correo no es valido",
       });
     }
-
+  
+    if (!regex.test(req.body.password)) {
+      return res.json(
+        {
+          success: true,
+          message: "La contraseña debe tener una mayuscula, una minuscula y un número. Su longitud nunca puede ser inferior a 4."
+        }
+      );
+    }
     const newPassword = bcrypt.hashSync(password, 10);
 
     const result = await User.update(
@@ -45,7 +57,7 @@ updateUserController.updateUser = async (req, res) => {
         name: name,
         surname: surname,
         dni: dni,
-        address: address,
+        cp: cp,
         birth_date: birth_date,
         phone: phone,
         email: email,

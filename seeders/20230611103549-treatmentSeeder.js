@@ -38,8 +38,8 @@ module.exports = {
       },
       {
         id: 5,
-        name: "Empaste",
-        comments: "Empaste ordinario",
+        name: "Ortodoncia",
+        comments: "Sesion de ortodoncia",
         price: "55",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",

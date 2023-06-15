@@ -6,13 +6,13 @@ module.exports = {
     await queryInterface.bulkInsert("Specialities", [
       {
         id: 1,
-        speciality_name: "Ortodoncista",
+        speciality_name: "Doctor/a",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
       {
         id: 2,
-        speciality_name: "Cirujano maxilofacial",
+        speciality_name: "Enfermero/a",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -24,13 +24,13 @@ module.exports = {
       },
       {
         id: 4,
-        speciality_name: "Enfermeria",
+        speciality_name: "Cirujano/a",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
       {
         id: 5,
-        speciality_name: "Administracion",
+        speciality_name: "Ortodoncista",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },

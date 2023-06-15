@@ -20,8 +20,8 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true
       },
-      address: {
-        type: Sequelize.STRING
+      cp: {
+        type: Sequelize.INTEGER
       },
       birth_date: {
         type: Sequelize.DATE
@@ -40,6 +40,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       role_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references:{
           model: "Roles",

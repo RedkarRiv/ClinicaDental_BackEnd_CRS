@@ -9,6 +9,8 @@ module.exports = {
         name: "Alberto",
         surname: "Alvarez",
         dni: "54675489K",
+        cp: 46001,
+        birth_date: "1989-06-05 00:00:00",
         email: "aalvarez@gol.com",
         phone: 664532843,
         password:
@@ -22,6 +24,8 @@ module.exports = {
         name: "Beatriz",
         surname: "Blasco",
         dni: "43567489J",
+        cp: 46002,
+        birth_date: "1989-06-05 00:00:00",
         email: "bblasco@gol.com",
         phone: 676856843,
         password:
@@ -35,6 +39,8 @@ module.exports = {
         name: "Cristina",
         surname: "Camaro",
         dni: "22267489T",
+        cp: 46003,
+        birth_date: "1989-06-05 00:00:00",
         email: "ccamaro@gol.com",
         phone: 676855555,
         password:
@@ -48,6 +54,8 @@ module.exports = {
         name: "Daniel",
         surname: "Donato",
         dni: "11267489J",
+        cp: 46004,
+        birth_date: "1989-06-05 00:00:00",
         email: "ddonato@gol.com",
         phone: 776856843,
         password:
@@ -61,6 +69,8 @@ module.exports = {
         name: "Pepe",
         surname: "Puebla",
         dni: "54674389K",
+        cp: 46005,
+        birth_date: "1989-06-05 00:00:00",
         email: "ppuebla@gol.com",
         phone: 664444843,
         password:
@@ -74,6 +84,8 @@ module.exports = {
         name: "Marta",
         surname: "Martinez",
         dni: "43567489O",
+        cp: 46006,
+        birth_date: "1989-06-05 00:00:00",
         email: "mmartinez@gol.com",
         phone: 670006843,
         password:
@@ -87,6 +99,8 @@ module.exports = {
         name: "Pedro",
         surname: "Palomares",
         dni: "22267489U",
+        cp: 46007,
+        birth_date: "1989-06-05 00:00:00",
         email: "ppalomares@gol.com",
         phone: 676877855,
         password:
@@ -100,6 +114,8 @@ module.exports = {
         name: "Sara",
         surname: "Sueca",
         dni: "11267489I",
+        cp: 46008,
+        birth_date: "1989-06-05 00:00:00",
         email: "ssueca@gol.com",
         phone: 773356843,
         password:
@@ -113,6 +129,8 @@ module.exports = {
         name: "Zaida",
         surname: "Zore",
         dni: "11223489L",
+        cp: 46009,
+        birth_date: "1989-06-05 00:00:00",
         email: "zzore@gol.com",
         phone: 773222843,
         password:
@@ -126,6 +144,8 @@ module.exports = {
         name: "Marcos",
         surname: "Ruperto",
         dni: "1126689L",
+        cp: 46010,
+        birth_date: "1989-06-05 00:00:00",
         email: "rruper@gol.com",
         phone: 673222843,
         password:
@@ -139,6 +159,8 @@ module.exports = {
         name: "Admin",
         surname: "Nimda",
         dni: "00000001A",
+        cp: 46011,
+        birth_date: "1989-06-05 00:00:00",
         email: "admin@admin.com",
         phone: 666996699,
         password:

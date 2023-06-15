@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert("Roles", [
       {
         id: 1,
-        rol_name: "customer",
+        rol_name: "user",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },

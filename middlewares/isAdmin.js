@@ -1,6 +1,7 @@
 const isAdmin = (req, res, next) => {
   try {
     if (req.roleId !== 3) {
+      console.log(`Esto es el rolId ${roleId}`)
       return res.json({
         success: true,
         message: "No tienes permisos para realizar esta acción",
