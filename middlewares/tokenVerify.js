@@ -5,7 +5,7 @@ const auth = (req, res, next) => {
     const bearerToken = req.headers.authorization;
 
     if (!bearerToken) {
-      return res.json({
+      return res.status(501).json({
         success: true,
         message: "No tienes permiso para continuar",
       });

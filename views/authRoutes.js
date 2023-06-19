@@ -6,6 +6,6 @@ const authController = require('../controllers/authControllers/authController')
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
-router.post('/newEmployee', auth, isAdmin, authController.createEmployee);
+router.post('/newEmployee', auth, isAdmin, authController.createEmployee); // ACTUALIZAR TB LA TABBLA USER.
 
 module.exports = router;

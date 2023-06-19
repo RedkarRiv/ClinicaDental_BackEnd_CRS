@@ -14,7 +14,8 @@ module.exports = {
         references:{
           model: "Users",
           key: "id"
-        }
+        },
+        onDelete: 'cascade'
       },
       speciality_id: {
         type: Sequelize.INTEGER,
