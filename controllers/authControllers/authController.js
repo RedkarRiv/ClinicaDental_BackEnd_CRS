@@ -50,6 +50,7 @@ authController.register = async (req, res) => {
 };
 
 authController.login = async (req, res) => {
+
   try {
     const email = req.body.email;
     const password = req.body.password;
@@ -67,6 +68,7 @@ authController.login = async (req, res) => {
     }
 
     const isMatch = bcrypt.compareSync(password, user.password);
+    console.log(isMatch)
 
     if (!isMatch) {
       return res.json({
@@ -125,8 +127,7 @@ authController.createEmployee = async (req, res) => {
       {
         success: false,
         message: "No ha sido posible crear la cuenta",
-        error: error.message
-      }
+g      }
       );
       
   }
