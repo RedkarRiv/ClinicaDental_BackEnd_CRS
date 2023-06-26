@@ -12,7 +12,7 @@ const auth = (req, res, next) => {
     }
 
     const token = bearerToken.split(" ")[1];
-    const decoded = jwt.verify(token, "kilombo");
+    const decoded = jwt.verify(token, process.env.SECRETO);
 
     req.userId = decoded.userId;
     req.roleId = decoded.roleId;

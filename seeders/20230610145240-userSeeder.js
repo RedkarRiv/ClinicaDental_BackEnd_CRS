@@ -16,6 +16,9 @@ module.exports = {
         password:
           "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 1,
+        avatar_img:
+          "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -29,8 +32,11 @@ module.exports = {
         email: "bblasco@gol.com",
         phone: 676856843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 1,
+        avatar_img:
+          "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -44,8 +50,11 @@ module.exports = {
         email: "ccamaro@gol.com",
         phone: 676855555,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 1,
+        avatar_img:
+          "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -59,8 +68,11 @@ module.exports = {
         email: "ddonato@gol.com",
         phone: 776856843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 1,
+        avatar_img:
+          "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -74,8 +86,11 @@ module.exports = {
         email: "ppuebla@gol.com",
         phone: 664444843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 1,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -89,8 +104,11 @@ module.exports = {
         email: "mmartinez@gol.com",
         phone: 670006843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 2,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
+
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -104,8 +122,10 @@ module.exports = {
         email: "ppalomares@gol.com",
         phone: 676877855,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 2,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -119,8 +139,10 @@ module.exports = {
         email: "ssueca@gol.com",
         phone: 773356843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 2,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -134,8 +156,10 @@ module.exports = {
         email: "zzore@gol.com",
         phone: 773222843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 2,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -149,8 +173,10 @@ module.exports = {
         email: "rruper@gol.com",
         phone: 673222843,
         password:
-        "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
+          "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 2,
+        avatar_img:
+          "https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },
@@ -166,6 +192,8 @@ module.exports = {
         password:
           "$2b$08$I1k1LFIUtwCrJV9RO8f/Su2Du0d/oryyyqjU7aIchRWdW30raPZx6",
         role_id: 3,
+        avatar_img:
+          "https://w7.pngwing.com/pngs/812/462/png-transparent-account-avatar-profile-user-avatars-icon.png",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
       },

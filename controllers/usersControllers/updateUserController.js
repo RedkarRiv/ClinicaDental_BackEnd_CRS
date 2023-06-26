@@ -24,7 +24,7 @@ updateUserController.updateUser = async (req, res) => {
     const phone = req.body.phone;
     const email = req.body.email;
     const password = req.body.password;
-    
+    const avatar = req.body.avatar;
 
 
     if (!password || !email || !name) {
@@ -62,6 +62,7 @@ updateUserController.updateUser = async (req, res) => {
         phone: phone,
         email: email,
         password: newPassword,
+        avatar_img: avatar
       },
       {
         where: {

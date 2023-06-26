@@ -14,16 +14,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       surname: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       dni: {
         type: Sequelize.STRING,
+        allowNull: false,
         unique: true
       },
       cp: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       birth_date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       phone: {
@@ -46,6 +50,10 @@ module.exports = {
           model: "Roles",
           key: "id"
         }
+      },
+      avatar_img: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

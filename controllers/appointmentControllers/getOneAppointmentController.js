@@ -8,7 +8,7 @@ getOneAppointmentController.getOneAppointment = async (req, res) => {
         id: req.params.id,
       },
       attributes: {
-        exclude: ["user_id", "employee_id", "createdAt", "updatedAt"],
+        exclude: ["user_id", "employee_id","treatment", "createdAt", "updatedAt"],
       },
       include: [
         {
