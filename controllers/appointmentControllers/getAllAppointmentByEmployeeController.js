@@ -1,18 +1,20 @@
 const { Appointment, User, Treatment, Employee } = require("../../models");
 const getAllAppointmentsByEmployeeController = {};
 
-getAllAppointmentsByEmployeeController.getAllAppointments = async (req, res) => {
+getAllAppointmentsByEmployeeController.getAllAppointments = async (
+  req,
+  res
+) => {
   try {
-    const employeeId = req.body.employee_id;
     const userId = req.userId;
-
+    const roleId = req.roleId;
     const checkUserIdEmployee = await Employee.findOne({
       where: {
         user_id: userId,
       },
     });
 
-    if (checkUserIdEmployee.id !== employeeId) {
+    if (!checkUserIdEmployee && roleId != 3) {
       return res.json({
         success: true,
         message: "No tienes permiso para acceder",
@@ -20,9 +22,6 @@ getAllAppointmentsByEmployeeController.getAllAppointments = async (req, res) => 
     }
 
     const allAppointments = await Appointment.findAll({
-      where: {
-        employee_id: employeeId,
-      },
       attributes: {
         exclude: ["user_id", "employee_id", "createdAt", "updatedAt"],
       },
@@ -60,6 +59,28 @@ getAllAppointmentsByEmployeeController.getAllAppointments = async (req, res) => 
           },
           model: Employee,
           as: "doctor",
+          include: [
+            {
+              model: User,
+              attributes: {
+                exclude: [
+                  "id",
+                  "role_id",
+                  "user_id",
+                  "profesional_registration_id",
+                  "active_status",
+                  "password",
+                  "phone",
+                  "cp",
+                  "dni",
+                  "avatar_img",
+                  "birth_date",
+                  "createdAt",
+                  "updatedAt",
+                ],
+              },
+            },
+          ],
         },
       ],
     });

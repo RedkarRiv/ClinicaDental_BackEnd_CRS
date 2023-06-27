@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "employee_id",
         as: "doctor",
       });
-      Employee.belongsTo(models.User, { foreignKey: "id" });
+      Employee.hasOne(models.User, { foreignKey: "id" });
     }
   }
   Employee.init(

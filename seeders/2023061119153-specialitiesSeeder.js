@@ -15,12 +15,14 @@ module.exports = {
         speciality_name: "Enfermero/a",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
+
       },
       {
         id: 3,
         speciality_name: "Anestesista",
         createdAt: "2023-06-05 00:00:00",
         updatedAt: "2023-06-05 00:00:00",
+
       },
       {
         id: 4,

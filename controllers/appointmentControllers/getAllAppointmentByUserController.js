@@ -24,12 +24,40 @@ getAllAppointmentsByUserController.getAllAppointments = async (req, res) => {
               "user_id",
               "profesional_registration_id",
               "active_status",
+              "password",
+              "phone",
+              "cp",
+              "dni",
+              "avatar_img",
+              "birth_date",
               "createdAt",
               "updatedAt",
             ],
           },
           model: Employee,
           as: "doctor",
+          include: [
+            {
+              model: User,
+              attributes: {
+                exclude: [
+                  "id",
+                  "role_id",
+                  "user_id",
+                  "profesional_registration_id",
+                  "active_status",
+                  "password",
+                  "phone",
+                  "cp",
+                  "dni",
+                  "avatar_img",
+                  "birth_date",
+                  "createdAt",
+                  "updatedAt",
+                ],
+            }
+           }
+          ]
         },
       ],
     });

@@ -25,9 +25,10 @@ module.exports = (sequelize, DataTypes) => {
     {
       user_id: DataTypes.INTEGER,
       employee_id: DataTypes.INTEGER,
-      appointment_date: DataTypes.DATE,
+      appointment_date: DataTypes.DATEONLY,
       treatment: DataTypes.INTEGER,
       comments: DataTypes.STRING,
+      status: DataTypes.STRING,
     },
     {
       sequelize,
