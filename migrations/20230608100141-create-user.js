@@ -32,7 +32,6 @@ module.exports = {
       },
       phone: {
         type: Sequelize.INTEGER,
-        unique: true
       },
       email: {
         allowNull: false,

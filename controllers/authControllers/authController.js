@@ -26,6 +26,7 @@ authController.register = async (req, res) => {
         message: "El correo no es valido",
       });
     }
+    
 
     console.log(password);
     console.log(regex.test(password));
@@ -82,7 +83,7 @@ authController.login = async (req, res) => {
     console.log(isMatch);
 
     if (!isMatch) {
-      return res.json({
+      return res.status(501).json({
         success: true,
         message: "Contraseña incorrecta",
       });
