@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       appointment_date: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       treatment: {
         type: Sequelize.INTEGER,

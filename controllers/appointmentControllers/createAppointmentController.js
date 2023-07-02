@@ -3,16 +3,16 @@ const createAppointmentController = {};
 
 createAppointmentController.createAppointment = async (req, res) => {
   try {
-    const { employee_id, appointment_date, treatment, comments } = req.body;
+    const { employee_id, appointment_date, treatment, comments, status } = req.body;
     const userId = req.userId;
     const regex =
       /^(?:\d{4}-\d{2}-\d{2}) (?:0[9-9]:[0-5][0-9]|1[0-3]:[0-5][0-9]|15:3[0-9]|16:[0-5][0-9]|17:[0-5][0-9]|18:00)$/;
 
-    if (!userId || !employee_id || !appointment_date) {
+    if (!userId || !employee_id || !appointment_date || !treatment) {
       return res.json({
         success: false,
         message:
-          "Tienes que introducir el número del paciente, el numero del empleado y la fecha para poder continuar",
+          "Tienes que cumplimentar todos los campos",
       });
     }
 
@@ -29,12 +29,13 @@ createAppointmentController.createAppointment = async (req, res) => {
       appointment_date: appointment_date,
       treatment: treatment,
       comments: comments,
+      status: status,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
     return res.json({
       success: true,
-      message: "Cita creada. Gracias por confiar en nuestro equipo",
+      message: "Cita creada",
       date: newAppointment,
     });
   } catch (error) {

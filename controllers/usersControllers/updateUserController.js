@@ -22,35 +22,33 @@ updateUserController.updateUser = async (req, res) => {
     const cp = req.body.cp;
     const birth_date = req.body.birth_date;
     const phone = req.body.phone;
-    const email = req.body.email;
-    const password = req.body.password;
     const avatar = req.body.avatar;
 
 
-    if (!password || !email || !name) {
-      return res.json({
-        success: false,
-        message:
-          "No puedes dejar los campos de name, password y email en blanco",
-      });
-    }
+    // if (!password || !email || !name) {
+    //   return res.json({
+    //     success: false,
+    //     message:
+    //       "No puedes dejar los campos de name, password y email en blanco",
+    //   });
+    // }
   
-    if (!checkEmail.test(req.body.email)) {
-      return res.status(400).json({
-        success: false,
-        message: "El correo no es valido",
-      });
-    }
+    // if (!checkEmail.test(req.body.email)) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "El correo no es valido",
+    //   });
+    // }
   
-    if (!regex.test(req.body.password)) {
-      return res.json(
-        {
-          success: true,
-          message: "La contraseña debe tener una mayuscula, una minuscula y un número. Su longitud nunca puede ser inferior a 4."
-        }
-      );
-    }
-    const newPassword = bcrypt.hashSync(password, 10);
+    // if (!regex.test(req.body.password)) {
+    //   return res.json(
+    //     {
+    //       success: true,
+    //       message: "La contraseña debe tener una mayuscula, una minuscula y un número. Su longitud nunca puede ser inferior a 4."
+    //     }
+    //   );
+    // }
+    // const newPassword = bcrypt.hashSync(password, 10);
 
     const result = await User.update(
       {
@@ -60,8 +58,6 @@ updateUserController.updateUser = async (req, res) => {
         cp: cp,
         birth_date: birth_date,
         phone: phone,
-        email: email,
-        password: newPassword,
         avatar_img: avatar
       },
       {

@@ -18,12 +18,12 @@ updateAppointmentController.updateAppointment = async (req, res) => {
     const treatment = req.body.treatment;
     const comments = req.body.comments;
 
-    if (!appointment_date) {
-      return res.json({
-        success: false,
-        message: "No puedes dejar el campo de fecha en blanco",
-      });
-    }
+    // if (!appointment_date) {
+    //   return res.json({
+    //     success: false,
+    //     message: "No puedes dejar el campo de fecha en blanco",
+    //   });
+    // }
 
     const result = await Appointment.update(
       {

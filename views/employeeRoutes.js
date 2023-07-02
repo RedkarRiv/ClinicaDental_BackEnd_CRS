@@ -6,6 +6,4 @@ const deleteEmployeeController = require("../controllers/employeeControllers/del
 
 router.delete("/delete/:id", auth, isAdmin, deleteEmployeeController.deleteEmployee); //PTE ELIMINAR CAMPOS DE USER.
 
-
-
 module.exports = router;

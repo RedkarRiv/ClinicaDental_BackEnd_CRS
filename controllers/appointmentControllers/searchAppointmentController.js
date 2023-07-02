@@ -1,21 +1,21 @@
-const { Appointment, User, Treatment, Employee } = require("../../models");
-const getAllAppointmentsByEmployeeController = {};
+const { Op } = require("sequelize");
+const { Appointment, User, Employee, Treatment } = require("../../models");
 
-getAllAppointmentsByEmployeeController.getAllAppointments = async (
-  req,
-  res
-) => {
+const searchAppointmentController = {};
+
+searchAppointmentController.searchAppointment = async (req, res) => {
   try {
-    const roleId = req.roleId;
-    
-    if (roleId == 1) {
-      return res.json({
-        success: true,
-        message: "No tienes permiso para acceder",
-      });
-    }
-
-    const allAppointments = await Appointment.findAll({
+    const userId = req.userId
+    const searchDate = req.body.date;
+    console.log("------------------")
+    console.log(searchDate)
+    const appointments = await Appointment.findAll({
+      where: {
+        appointment_date: {
+          [Op.substring]: `%${searchDate}%`,
+        },
+        user_id:userId
+      },
       attributes: {
         exclude: ["user_id", "employee_id", "createdAt", "updatedAt"],
       },
@@ -77,19 +77,22 @@ getAllAppointmentsByEmployeeController.getAllAppointments = async (
           ],
         },
       ],
+
+
+
+
     });
 
-    return res.json({
-      success: true,
-      message: "Todas las citas recuperadas",
-      data: allAppointments,
-    });
+    
+    if (appointments.length === 0) {
+      return res.json({ message: "No existen citas" });
+    }
+    
+    res.json({ message: "Citas encontradas", data: appointments });
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Los datos no han podido ser recuperados",
-      error: error.message,
-    });
+    console.error(error);
+    res.status(500).json({ message: "Error al recuperar las citas" });
   }
 };
-module.exports = getAllAppointmentsByEmployeeController;
+
+module.exports = searchAppointmentController;
