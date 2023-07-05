@@ -8,14 +8,16 @@ const updateAppointmentController = require("../controllers/appointmentControlle
 const getAllAppointmentsByUserController = require("../controllers/appointmentControllers/getAllAppointmentByUserController");
 const getAllAppointmentsByEmployeeController = require("../controllers/appointmentControllers/getAllAppointmentByEmployeeController");
 const searchAppointmentContoller = require("../controllers/appointmentControllers/searchAppointmentController");
+const searchAppointmentControllerbyEmployee = require("../controllers/appointmentControllers/searchAppointmentControllerbyEmployee");
 
 router.post("/new", auth, createAppointmentController.createAppointment)
-router.post("/delete", auth, deleteAppointmentController.deleteAppointment) 
+router.delete("/delete", auth, deleteAppointmentController.deleteAppointment) 
 router.get("/visit/:id", auth, getOneAppointmentController.getOneAppointment)
 router.put("/update/:id", auth, updateAppointmentController.updateAppointment)
 router.get("/all", auth, getAllAppointmentsByUserController.getAllAppointments)
 router.get("/list", auth, isEmployee, getAllAppointmentsByEmployeeController.getAllAppointments)
-router.post("/sort", auth, searchAppointmentContoller.searchAppointment)
+router.post("/sort", auth, searchAppointmentContoller.sortAppointment)
+router.post("/search", auth, searchAppointmentControllerbyEmployee.searchAppointment)
 
 
 module.exports = router;

@@ -59,7 +59,7 @@ authController.register = async (req, res) => {
       message: "No ha sido posible crear la cuenta",
       error: error.message,
     });
-  }
+  }                                                                                                                                             
 };
 
 authController.login = async (req, res) => {

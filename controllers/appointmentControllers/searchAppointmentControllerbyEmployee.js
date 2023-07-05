@@ -1,11 +1,16 @@
 const { Op } = require("sequelize");
 const { Appointment, User, Employee, Treatment } = require("../../models");
 
-const searchAppointmentController = {};
+const searchAppointmentControllerbyEmployee = {};
 
-searchAppointmentController.sortAppointment = async (req, res) => {
+searchAppointmentControllerbyEmployee.searchAppointment = async (req, res) => {
   try {
-    const userId = req.userId
+    const employeeId =  await Employee.findOne({
+      where: {
+        user_id: req.userId,
+      },
+    });
+
     const searchDate = req.body.date;
     console.log("------------------")
     console.log(searchDate)
@@ -14,7 +19,7 @@ searchAppointmentController.sortAppointment = async (req, res) => {
         appointment_date: {
           [Op.substring]: `%${searchDate}%`,
         },
-        user_id:userId
+        employee_id:employeeId.id
       },
       attributes: {
         exclude: ["user_id", "employee_id", "createdAt", "updatedAt"],
@@ -95,4 +100,4 @@ searchAppointmentController.sortAppointment = async (req, res) => {
   }
 };
 
-module.exports = searchAppointmentController;
+module.exports = searchAppointmentControllerbyEmployee;
