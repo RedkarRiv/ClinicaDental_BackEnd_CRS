@@ -26,4 +26,4 @@ db.then(() =>
     console.error('Error starting server', error.message);
 })
 
-export default app;
+module.exports = app;
