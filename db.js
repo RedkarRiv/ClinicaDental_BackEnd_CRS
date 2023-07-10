@@ -1,6 +1,12 @@
 const config = require('./config/config.js');
 const { Sequelize } = require('sequelize');
 require ("dotenv").config()
+import mysql2 from 'mysql2';
+
+if (options.dialect === 'mysql') {
+  options.dialectModule = mysql2;
+}
+new Sequelize(options)
 
 const sequelize = new Sequelize(
     process.env.MYSQL_DATABASE || config.development.database, 
