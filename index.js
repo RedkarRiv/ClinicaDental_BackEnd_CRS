@@ -7,7 +7,10 @@ require ("dotenv").config()
 const PORT = process.env.PORT;
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://react-dental-clinic.vercel.app'
+
+}));
 app.use(express.json());
 app.use(router);
 
