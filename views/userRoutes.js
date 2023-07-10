@@ -7,6 +7,10 @@ const updateUserController = require("../controllers/usersControllers/updateUser
 const getOneUserController = require("../controllers/usersControllers/getOneUserController");
 const getAllUserController = require("../controllers/usersControllers/getAllUserController");
 const getAllUsersByEmployeeController = require("../controllers/usersControllers/getAllUsersByEmployeeController")
+const cors = require('cors');
+
+
+router.use(cors());
 
 router.delete("/:id", auth, isAdmin, deleteUserController.deleteUser);
 router.put("/update", auth, updateUserController.updateUser);
