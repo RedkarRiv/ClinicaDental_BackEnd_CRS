@@ -3,10 +3,6 @@ const { Sequelize } = require('sequelize');
 require ("dotenv").config()
 import mysql2 from 'mysql2';
 
-if (options.dialect === 'mysql') {
-  options.dialectModule = mysql2;
-}
-new Sequelize(options)
 
 const sequelize = new Sequelize(
     process.env.MYSQL_DATABASE || config.development.database, 
@@ -16,6 +12,7 @@ const sequelize = new Sequelize(
         host: process.env.MYSQL_HOST || config.development.host,
         port: process.env.MYSQL_PORT || config.development.port,
         dialect: 'mysql',
+        dialectModule: mysql2,
         operatorAliases: false,
         pool: {
             max: 5,  //maximum number of connection in pool

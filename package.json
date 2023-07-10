@@ -1,7 +1,6 @@
-{
-  "name": "project_backend_crs",
+{  "name": "project_backend_crs",
   "version": "1.0.0",
-  "description": "",
+  "description": "",  
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
