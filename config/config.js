@@ -8,7 +8,6 @@ module.exports = {
     "database": process.env.DDBBNAME,
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": process.env.MYSQL_PORT
   },
   "test": {
     "username": "root",
@@ -23,6 +22,7 @@ module.exports = {
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "port": process.env.MYSQL_PORT
     
   }
 }
