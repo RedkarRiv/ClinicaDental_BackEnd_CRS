@@ -6,7 +6,7 @@ module.exports = {
     "username": process.env.USER,
     "password": process.env.PASSWORD,
     "database": process.env.DDBBNAME,
-    "host": "containers-us-west-89.railway.app",
+    "host": "https://clinica-dental-back-end-crs.vercel.app/",
     "dialect": "mysql",
     "port": process.env.MYSQL_PORT
   },
@@ -21,7 +21,7 @@ module.exports = {
     "username": process.env.USER,
     "password": process.env.PASSWORD,
     "database": process.env.DDBBNAME,
-    "host": "containers-us-west-89.railway.app",
+    "host": "https://clinica-dental-back-end-crs.vercel.app/",
     "dialect": "mysql",
     "port": process.env.MYSQL_PORT
     
