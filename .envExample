@@ -1,7 +1,7 @@
-USER="root"
-PASSWORD="ouAmtZPB2UmyXuH9SscD"
-DDBBNAME="railway"
-SECRETO="kilombo"
-MYSQL_PORT="8042"
-MYSQL_HOST="containers-us-west-89.railway.app"
-PORT="https://clinica-dental-back-end-crs.vercel.app/"
+USER
+PASSWORD
+DDBBNAME
+SECRETO
+MYSQL_PORT
+MYSQL_HOST
+
