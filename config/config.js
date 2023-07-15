@@ -6,7 +6,7 @@ module.exports = {
     "username": process.env.USER,
     "password": process.env.PASSWORD,
     "database": process.env.DDBBNAME,
-    "host": "containers-us-west-167.railway.app",
+    "host": "mysql://root:EtuQUDHpQgo8kKkZEiBG@containers-us-west-167.railway.app:7157/railway",
     "dialect": "mysql",
     "port": process.env.MYSQL_PORT
   },
@@ -21,7 +21,7 @@ module.exports = {
     "username": process.env.USER,
     "password": process.env.PASSWORD,
     "database": process.env.DDBBNAME,
-    "host": "containers-us-west-167.railway.app",
+    "host": "mysql://root:EtuQUDHpQgo8kKkZEiBG@containers-us-west-167.railway.app:7157/railway",
     "dialect": "mysql",
     "port": process.env.MYSQL_PORT
     
