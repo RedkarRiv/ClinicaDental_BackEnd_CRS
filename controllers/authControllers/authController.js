@@ -110,7 +110,7 @@ authController.login = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "El usuario no ha podido logearse",
-      error: error.menssage,
+      error: error.message,
     });
   }
 };
