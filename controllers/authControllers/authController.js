@@ -140,4 +140,23 @@ authController.createEmployee = async (req, res) => {
   }
 };
 
+
+
+
+
+authController.getlogin = async (req, res) => {
+  try {
+
+    return res.send("Soy el login")
+    }
+  catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "El usuario no ha podido logearse",
+      error: error.message,
+    });
+  }
+};
+
+
 module.exports = authController;
