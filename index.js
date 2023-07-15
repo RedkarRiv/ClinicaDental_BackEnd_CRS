@@ -9,10 +9,10 @@ const PORT = process.env.PORT;
 
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://react-dental-clinic.vercel.app',
-}));
 app.use(router);
+app.use(cors({
+    origin: 'https://react-dental-clinic.vercel.app/',
+}));
 
 app.get('/health', (req, res) => {
     return res.send('healthy');

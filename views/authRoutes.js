@@ -1,6 +1,5 @@
 const router = require("express").Router();
-
-const authController = require('../controllers/authControllers/authController')
+const authController = require('../controllers/authControllers/authController');
 const cors = require('cors');
 
 
