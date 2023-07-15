@@ -9,10 +9,8 @@ const getAllAppointmentsByUserController = require("../controllers/appointmentCo
 const getAllAppointmentsByEmployeeController = require("../controllers/appointmentControllers/getAllAppointmentByEmployeeController");
 const searchAppointmentContoller = require("../controllers/appointmentControllers/searchAppointmentController");
 const searchAppointmentControllerbyEmployee = require("../controllers/appointmentControllers/searchAppointmentControllerbyEmployee");
-const cors = require('cors');
 
 
-router.use(cors());
 
 router.post("/new", auth, createAppointmentController.createAppointment)
 router.delete("/delete", auth, deleteAppointmentController.deleteAppointment) 

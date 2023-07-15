@@ -4,10 +4,8 @@ const isAdmin = require("../middlewares/isAdmin");
 const deleteEmployeeController = require("../controllers/employeeControllers/deleteEmployeeController");
 const getAllEmployeesController = require("../controllers/employeeControllers/getAllEmployeesController");
 const getAllTreatmentsController = require("../controllers/employeeControllers/getAllTreatmentsController");
-const cors = require('cors');
 
 
-router.use(cors());
 
 
 router.delete("/delete/:id", auth, isAdmin, deleteEmployeeController.deleteEmployee); //PTE ELIMINAR CAMPOS DE USER.
